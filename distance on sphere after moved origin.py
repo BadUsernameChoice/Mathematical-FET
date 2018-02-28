@@ -37,7 +37,7 @@ def colorPlot3(nCount, func, x0=0, y0=0, label=None):
     y = np.linspace(y0-R*np.pi, y0+R*np.pi, nCount)
     X, Y = np.meshgrid(x, y) 
     Z = func(X, Y)#%1
-    plt.pcolormesh(X, Y, Z, cmap=cm.hot, label=label)
+    plt.pcolormesh(X, Y, Z, cmap=plt.get_cmap('nipy_spectral'), label=label)
     plt.colorbar(label=label)
     plt.axes().set_aspect('equal', 'datalim')
 
@@ -65,4 +65,6 @@ def plotFieldFromA(a = (-R, .8*R), res=400):
     plt.ylim(-D, D)
     plt.legend()
 
-plotFieldFromA(res=200)
+#plotFieldFromA(res=200)
+plotFieldFromA((-2*R, .5*R), 800)
+
